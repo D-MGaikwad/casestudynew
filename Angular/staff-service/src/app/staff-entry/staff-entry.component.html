@@ -1,0 +1,125 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!--
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                    </ul>
+                   
+                  </div>
+                </div>
+              </nav>
+              -->
+
+      <form>
+        <fieldset>
+          <legend class="text-center">Enter the Staff information: <span class="req"><small>
+                * required</small></span></legend>
+
+          <div class="form-group">
+            <label for="Id"><span class="req">* </span> Employee Code:</label>
+            <input required type="text" [(ngModel)]="employee.employeeCode" name="employeeCode" id="employeeCode"
+              class="form-control phone" maxlength="28" placeholder="Enter Employee-Code..." />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeName"><span class="req">* </span> Employee Name: </label>
+            <input class="form-control" type="text" [(ngModel)]="employee.employeeName" name="employeeName" id="txt" />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeAddress"><span class="req">* </span> Address of the Employee : </label>
+            <input class="form-control" type="text" [(ngModel)]="employee.employeeAddress" name="employeeAddress"
+              id="txt" placeholder="Enter address of the employee.." required />
+            <div id="errLast"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="salary"><span class="req">* </span> Salary: </label>
+            <input class="form-control" required type="text" [(ngModel)]="employee.salary" name="salary" id="email"
+              placeholder="Enter employee's salary" />
+            <div class="status" id="status"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="nic"><span class="req">* </span> NIC: </label>
+            <input class="form-control" required type="text" [(ngModel)]="employee.nic" name="nic" id="nic"
+              placeholder="Enter nic of the employee" />
+          </div>
+
+          <div class="form-group">
+            <label for="age"> Age: </label>
+            <input class="form-control" required type="text" [(ngModel)]="employee.age" name="age" id="company"
+              placeholder="Enter employee's age" />
+          </div>
+
+          <div class="form-group">
+            <label for="occupation"><span class="req">* </span> Occupation: </label>
+            <select class="form-control" required type="text" [(ngModel)]="employee.occupation" name="occupation"
+              id="occupation" placeholder="Enter employee's occupation">
+              <option value="Hotel Manager">Hotel Manager</option>
+              <option value="Assistant Hotel Manager">Assistant Hotel Manager</option>
+              <option value="Hotel Receptionist">Hotel Receptionist</option>
+              <option value="Executive Chef">Executive Chef</option>
+              <option value="Chef">Chef</option>
+              <option value="Cook">Cook</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="employeeEmail"><span class="req">* </span> Employee Email-id: </label>
+            <input class="form-control" required type="text" [(ngModel)]="employee.employeeEmail" name="employeeEmail"
+              id="employeeEmail" placeholder="Enter employee's Email-id" />
+            <div class="status" id="status"></div>
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+          </div>
+        </fieldset>
+      </form><!-- ends register form -->
+      <!-- second for to fiter user-->
+    </div><!-- ends col-6 -->
+
+  </div>
+</div>
+<div style="text-align: center">
+  <h3>{{message}}</h3>
+</div>
+<div style="text-align: center">
+  <button class="btn btn-link">
+    <a href="http://localhost:4200/findAllStaff">
+      <h4>Go to Employee Information</h4>
+    </a>
+  </button>
+</div>

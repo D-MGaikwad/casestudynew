@@ -1,0 +1,68 @@
+<div class="col-md-6 offset-md-3" style="margin-top: 20px;">
+    <h3>Update Guest Information</h3>
+
+    <form (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+            <label>Guest Id : </label>
+            <input class="form-control" type="text" id="disabledTextInput" [(ngModel)]="user.guestId" name="guestId" />
+        </div>
+    
+
+        <div class="form-group">
+            <label>Code : </label>
+            <input class="form-control" type="text" id="guestMemberCode" [(ngModel)]="user.guestMemberCode" name="guestMemberCode" />
+        </div>
+
+        <div class="form-group">
+            <label>Name of the Guest: </label>
+            <input class="form-control" type="text" id="guestName" [(ngModel)]="user.guestName" name="guestName"/>
+        </div>
+
+        <div class="form-group">
+            <label for="gender"><span class="req">* </span> Gender : </label>
+            <select name="gender" id="gender" [(ngModel)]="user.gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="guestEmail"><span class="req">* </span> Email: </label>
+            <input class="form-control" type="text" [(ngModel)]="user.guestEmail" name="guestEmail"
+                id="email"/>
+        </div>
+
+        <div class="form-group">
+            <label for="guestAddress"><span class="req">* </span> Address: </label>
+            <input class="form-control" type="text" [(ngModel)]="user.guestAddress" name="guestAddress"
+                id="guestAddress"/>
+        </div>
+
+        <div class="form-group">
+            <label for="company"> Company: </label>
+            <input class="form-control" type="text" [(ngModel)]="user.company" name="company"
+                id="company"/>
+        </div>
+
+        <div class="form-group">
+            <label for="guestPhoneNumber"><span class="req">* </span> Phone no.: </label>
+            <input class="form-control" type="text" [(ngModel)]="user.guestPhoneNumber" name="guestPhoneNumber"
+                id="guestPhoneNumber"/>
+        </div>
+
+
+        <div class="form-group">
+            <button class="btn btn-success"  style="margin-top: 10px;"  type="submit">Submit</button>
+            <a href="http://localhost:4200/findAllGuest"></a>
+        </div>
+    </form>
+
+</div>
+
+<div style="text-align: center">
+    <button class="btn btn-link"> 
+    <a href="http://localhost:4200/findAllGuest">
+      <h4>Go back to Guest Information</h4> </a>
+    </button> 
+    </div>

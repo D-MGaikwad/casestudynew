@@ -1,0 +1,179 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- <div class="container">
+    <div class="row">
+               <div id="custom-search-input">
+                                <div class="input-group col-md-8" style="text-align: left">
+                                   
+                        <input type="text" class="search-query form-control" placeholder="Search Guest with guest Id" 
+                          name="guestId" #box/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button" (click)="findUserByGuestId(box.value)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+    </div>
+    </div> -->
+
+<div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-8" style="text-align: left">
+
+                <span class="glyphicon glyphicon-search" style="text-align: start;"> Search here:</span>
+                <input id="search-input" type="text" class="form-control" placeholder="Search With Guest-id"
+                    name="guestId" [(ngModel)]="guestId" />
+
+                <!-- <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" (click)="findUserByCode(employeeCode)">
+                                    <span class="glyphicon glyphicon-search"></span></button>
+                            </span> -->
+
+                <tr *ngFor="let user of users">
+                    <div *ngIf="guestId == user.guestId">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                    <th>Guest Id</th>
+                                    <th>Member Code</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Company</th>
+                                    <th>Phone Number</th>
+                                    <th>Action</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{user.guestId}}</td>
+                                <td>{{user.guestMemberCode}}</td>
+                                <td>{{user.guestName}}</td>
+                                <td>{{user.gender}}</td>
+                                <td>{{user.guestEmail}}</td>
+                                <td>{{user.guestAddress}}</td>
+                                <td>{{user.company}}</td>
+                                <td>{{user.guestPhoneNumber}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger btn-xs" (click)="deleteUser(user.guestId)">
+                                        <span class="glyphicon glyphicon-remove"></span> Delete</button>
+                                </td>
+
+                                <td class="text-center">
+                                    <button class="btn btn-primary" (click)="updateUser(user.guestId)">
+                                        Update</button>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </tr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+           <div style="margin-top: 15px;" >
+            <h3>Guest List:</h3>
+           </div>
+            
+            <table class="table table-striped custab" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Guest Id</th>
+                        <th>Member Code</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.guestId}}</td>
+                        <td>{{user.guestMemberCode}}</td>
+                        <td>{{user.guestName}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.guestEmail}}</td>
+                        <td>{{user.guestAddress}}</td>
+                        <td>{{user.company}}</td>
+                        <td>{{user.guestPhoneNumber}}</td>
+
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-xs" (click)="deleteUser(user.guestId)">
+                                <span class="glyphicon glyphicon-remove"></span> Delete</button>
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-primary" (click)="updateUser(user.guestId)">
+                                Update</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <button class="btn btn-link">
+            <a href="http://localhost:4200/addGuest">
+                <h4>Back</h4>
+            </a>
+        </button>
+    </div>
+
+    <!-- 
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+
+            <table class="table table-striped custab">
+                <thead>
+                    <tr>
+                        <th>Guest Id</th>
+                        <th>Member Code</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.guestId}}</td>
+                        <td>{{user.guestMemberCode}}</td>
+                        <td>{{user.guestName}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.guestEmail}}</td>
+                        <td>{{user.guestAddress}}</td>
+                        <td>{{user.company}}</td>
+                        <td>{{user.guestPhoneNumber}}</td>
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-xs" (click)="deleteUser(user.guestId)">
+                                <span class="glyphicon glyphicon-remove"></span> Delete</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-info btn-xs" (click)="updateGuest()">Update</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->

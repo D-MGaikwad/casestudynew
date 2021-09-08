@@ -1,0 +1,135 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-8" style="text-align: left">
+                <input id="search-input" type="text" class="form-control" placeholder="Search With Employee-Code"  name="employeeCode" [(ngModel)]="employeeCode"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" (click)="findUserByCode(employeeCode)">
+                        <span class="glyphicon glyphicon-search"></span>Search
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+<div class="container"> -->
+
+<div class="container">
+    <div class="row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-8" style="text-align: left">
+
+                <span class="glyphicon glyphicon-search" style="text-align: start;"> Search here:</span>
+                <input id="search-input" type="text" class="form-control" placeholder="Search With Employee-Code"
+                    name="employeeCode" [(ngModel)]="employeeCode" />
+
+                <!-- <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" (click)="findUserByCode(employeeCode)">
+                                <span class="glyphicon glyphicon-search"></span></button>
+                        </span> -->
+
+                <tr *ngFor="let employee of employees">
+                    <div *ngIf="employeeCode == employee.employeeCode">
+
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Salary</th>
+                                    <th>NIC</th>
+                                    <th>Age</th>
+                                    <th>Occupation</th>
+                                    <th>Email-id</th>
+                                    <th>Action</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <td>{{employee.employeeCode}}</td>
+                                <td>{{employee.employeeName}}</td>
+                                <td>{{employee.employeeAddress}}</td>
+                                <td>{{employee.salary}}</td>
+                                <td>{{employee.nic}}</td>
+                                <td>{{employee.age}}</td>
+                                <td>{{employee.occupation}}</td>
+                                <td>{{employee.employeeEmail}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger btn-xs" (click)="deleteUser(employee.employeeCode)">
+                                        <span class="glyphicon glyphicon-remove"></span> Delete</button>
+                                </td>
+
+                                <td class="text-center">
+                                    <button class="btn btn-primary" (click)="updateUser(employee.employeeCode)">
+                                        Update</button>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </tr>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <h3 style="margin-top: 15px;">Employee List:</h3>
+            <table class="table table-striped custab" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Salary</th>
+                        <th>NIC</th>
+                        <th>Age</th>
+                        <th>Occupation</th>
+                        <th>Email-id</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td>{{employee.employeeCode}}</td>
+                        <td>{{employee.employeeName}}</td>
+                        <td>{{employee.employeeAddress}}</td>
+                        <td>{{employee.salary}}</td>
+                        <td>{{employee.nic}}</td>
+                        <td>{{employee.age}}</td>
+                        <td>{{employee.occupation}}</td>
+                        <td>{{employee.employeeEmail}}</td>
+
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-xs" (click)="deleteUser(employee.employeeCode)">
+                                <span class="glyphicon glyphicon-remove"></span> Delete</button>
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-primary" (click)="updateUser(employee.employeeCode)">
+                                Update</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <button class="btn btn-link">
+            <a href="http://localhost:4200/addStaff">
+                <h4>Back</h4>
+            </a>
+        </button>
+    </div>
